@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
 namespace TP4_Paquetes_Turisticos.Controllers;
+using TP4_Paquetes_Turisticos.Models;
 //el controller:
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡤⠴⠒⠒⠲⠶⠖⠒⠛⠙⠲⠤⠖⠲⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⡾⠋⠀⢠⠀⣰⠀⠀⠀⣴⣀⣠⠀⠀⢀⡀⠀⠉⠙⢦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -37,7 +38,10 @@ namespace TP4_Paquetes_Turisticos.Controllers;
 public class HomeController : Controller
 {
     public IActionResult Index()
-    {
+    {            
+            ViewBag.paquete = ORTWorld.Paquetes;
+        
         return View();
     }
+    //ESTE ES EL UNICO CONTROLLER, CUALQUIER COSA DE CONTROLLER VA ACA Y NO SE CAMBIA
 }
