@@ -17,9 +17,10 @@ public class HomeController : Controller
         ViewBag.excursiones = ORTWorld.ListaExcursiones;
         return View();
     }
-    public IActionResult GuardarPaquete(int Destino, int Hotel, int Aereo, int Excursion)
+    public IActionResult GuardarPaquete(string Destino, string Hotel, string Aereo, string Excursion)
     {            
-        Paquete nuevoPaquete = new Paquete();
+        Paquete nuevoPaquete = new Paquete(Hotel, Aereo, Excursion);
+        ORTWorld.Paquetes.Add(Destino, nuevoPaquete);
         return View();
     }
     //ESTE ES EL UNICO CONTROLLER, CUALQUIER COSA DE CONTROLLER VA ACA Y NO SE CAMBIA
