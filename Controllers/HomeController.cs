@@ -19,10 +19,10 @@ public class HomeController : Controller
     }
     public IActionResult GuardarPaquete(string Destino, string Hotel, string Aereo, string Excursion)
     {
-        bool error = true;
-        if(Destino == null || Hotel == null || Aereo == null || Excursion == null) error = false;
+        bool error = false;
+        if(Destino == null || Hotel == null || Aereo == null || Excursion == null) error = true;
         Paquete nuevoPaquete = new Paquete(Hotel, Aereo, Excursion);
-        ORTWorld.Paquetes.Add(Destino, nuevoPaquete);
+        if(!error)ORTWorld.Paquetes.Add(Destino, nuevoPaquete);
         ViewBag.Error = error;  
         return View();
     }
