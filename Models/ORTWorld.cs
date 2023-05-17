@@ -20,10 +20,10 @@ public class ORTWorld
     };
     public static Dictionary<string, Paquete> Paquetes {get; private set;} = new Dictionary<string, Paquete>();
 
-    public bool IngresarPaquete(string destinoSeleccionado, Paquete paquete) 
+    public static bool IngresarPaquete(string destinoSeleccionado, Paquete paquete) 
     {
-        bool retorno = false;
-        foreach (string item in ListaDestinos) if(item == destinoSeleccionado) retorno = true;
+        bool retorno = true;
+        foreach (string item in ORTWorld.Paquetes.Keys) if(item == destinoSeleccionado) retorno = false;
         if(retorno) Paquetes.Add(destinoSeleccionado, paquete);
         return retorno;
     }

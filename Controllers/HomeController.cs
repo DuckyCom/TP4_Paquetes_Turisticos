@@ -17,14 +17,17 @@ public class HomeController : Controller
         ViewBag.excursiones = ORTWorld.ListaExcursiones;
         return View();
     }
-    public IActionResult GuardarPaquete(string Destino, string Hotel, string Aereo, string Excursion)
+    public IActionResult GuardarPaquete(int Destino, int Hotel, int Aereo, int Excursion)
     {
         bool error = false;
         if(Destino == null || Hotel == null || Aereo == null || Excursion == null) error = true;
-        Paquete nuevoPaquete = new Paquete(Hotel, Aereo, Excursion);
-        if(!error)ORTWorld.Paquetes.Add(Destino, nuevoPaquete);
-        ViewBag.Error = error;  
-        return View();
+        if(!error)
+        {
+            Paquete nuevoPaquete = new Paquete(ORTWorld.ListaHoteles[Hotel], ORTWorld.ListaAereos[Aereo], ORTWorld.ListaExcursiones[Excursion]);
+            ORTWorld.IngresarPaquete(ORTWorld.ListaDestinos[Destino], nuevoPaquete);
+        }
+        ViewBag.Error = error;
+        return View("Gracias");
     }
     //ESTE ES EL UNICO CONTROLLER, CUALQUIER COSA DE CONTROLLER VA ACA Y NO SE CAMBIA
 }
