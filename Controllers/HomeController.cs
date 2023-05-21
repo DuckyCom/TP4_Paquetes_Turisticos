@@ -27,7 +27,7 @@ public class HomeController : Controller
             ORTWorld.IngresarPaquete(ORTWorld.ListaDestinos[Destino], nuevoPaquete);
         }
         ViewBag.Error = error;
-        return View("Index");
+        return View("index");
     }
     //ESTE ES EL UNICO CONTROLLER, CUALQUIER COSA DE CONTROLLER VA ACA Y NO SE CAMBIA
 }
