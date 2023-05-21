@@ -1,16 +1,27 @@
-﻿@{
-    ViewData["Title"] = "Paquetes T";
-}
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Index.css">
+</head>
+
+<body>
+    @{
+        ViewData["Title"] = "Paquetes T";
+    }
 
 
 <h1>TP 04 - Paquetes Turisticos</h1>
 
     @foreach (string item in ViewBag.paquete.Keys)
     {
-        <h1>@item</h1>
-        <h1>@ViewBag.paquete[item].Hotel</h1>
-        <h1>@ViewBag.paquete[item].Aereo</h1>
-        <h1>@ViewBag.paquete[item].Excursion</h1>
+        <h1>@item @ViewBag.paquete[item].Hotel @ViewBag.paquete[item].Aereo @ViewBag.paquete[item].Excursion</h1>
     } 
 
-<a href='@Url.Action("SelectPaquete","Home")' alt="Introducir texto"> <h1>Test</h1></a>
+<a href='@Url.Action("SelectPaquete","Home")' alt="Introducir texto"> <h1>Formulario: Ingresar paquete</h1></a>
+</body>
+
+</html>
+
