@@ -3,6 +3,7 @@
 namespace TP4_Paquetes_Turisticos.Controllers;
 using TP4_Paquetes_Turisticos.Models;
 public class HomeController : Controller
+
 {
     public IActionResult Index()
     {            
@@ -25,9 +26,13 @@ public class HomeController : Controller
         {
             Paquete nuevoPaquete = new Paquete(ORTWorld.ListaHoteles[Hotel], ORTWorld.ListaAereos[Aereo], ORTWorld.ListaExcursiones[Excursion]);
             ORTWorld.IngresarPaquete(ORTWorld.ListaDestinos[Destino], nuevoPaquete);
+            return RedirectToAction("Index");
         }
-        ViewBag.Error = error;
-        return View("index");
+        else
+        {
+            return View("SelectPaquete");
+        }
+        
     }
     //ESTE ES EL UNICO CONTROLLER, CUALQUIER COSA DE CONTROLLER VA ACA Y NO SE CAMBIA
 }

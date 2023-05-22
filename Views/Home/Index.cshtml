@@ -1,15 +1,13 @@
-﻿    @{
-        ViewData["Title"] = "Paquetes T";
-    }
+﻿@{
+    ViewData["Title"] = "Paquetes T";
+}
     
 <h1>TP 04 - Paquetes Turisticos</h1>
 
     @foreach (string item in ViewBag.paquete.Keys)
     { 
-        <h1>@item</h1>
-        <h1>@ViewBag.paquete[item].Hotel</h1> 
-        <h1>@ViewBag.paquete[item].Aereo </h1>
-        <h1>@ViewBag.paquete[item].Excursion</h1>
+        <h1>Destino: @item</h1> 
+        <h1>@ViewBag.paquete[item].Hotel @ViewBag.paquete[item].Aereo @ViewBag.paquete[item].Excursion</h1>  
     } 
 
 <a href='@Url.Action("SelectPaquete","Home")' alt="Introducir texto"> <h1>Formulario: Ingresar paquete</h1></a>
