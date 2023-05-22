@@ -7,7 +7,8 @@
     @foreach (string item in ViewBag.paquete.Keys)
     { 
         <h1>Destino: @item</h1> 
-        <h1>@ViewBag.paquete[item].Hotel @ViewBag.paquete[item].Aereo @ViewBag.paquete[item].Excursion</h1>  
+        <h1>Hotel: @ViewBag.paquete[item].Hotel Aerolinea: @ViewBag.paquete[item].Aereo Excursion: @ViewBag.paquete[item].Excursion</h1>
+        <br>  
     } 
 
 <a href='@Url.Action("SelectPaquete","Home")' alt="Introducir texto"> <h1>Formulario: Ingresar paquete</h1></a>

@@ -35,3 +35,7 @@ img{
   width: 150px;
   height: 150px;
 }
+input[type = "submit"]{
+  width: 360px;
+  height: 175px;
+}

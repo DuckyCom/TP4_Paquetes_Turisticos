@@ -8,15 +8,15 @@ public class ORTWorld
     };
     public static List<string> ListaHoteles {get; private set;} = new List<string>
     {
-        "trivago", "santa maria", "babilonia", "stanca", "cherniak", "momazos", "grasa", "notengoideadequeponer", "goku", "kratos" 
+        "trivago", "santa maria", "babilonia", "el one piece", "cherniak", "momazos", "grasa", "notengoideadequeponer", "goku", "kratos" 
     };
     public static List<string> ListaAereos {get; private set;} = new List<string>
     {
-        "stanca", "binker", "iberia", "poppy"/*Aerolineas Martillo*/, "maradona", "aerolineas argentinas", "readme.md", "aereo", "aprobanosporfa", "india", 
+        "elver galarga", "binker", "iberia", "poppy"/*Aerolineas Martillo*/, "maradona", "aerolineas argentinas", "readme.md", "aereo", "aprobanosporfa", "india", 
     };
     public static List<string> ListaExcursiones {get; private set;} = new List<string>
     {
-        "esqui", "entrenamiento", "calistenia", "tirolesa", "tracking", "silent-fest", "rafting", "canopy", "tutorial-c#", "tutorial-pseint", 
+        "esqui", "entrenamiento", "calistenia", "tirolesa", "tracking", "silent-fest", "rafting", "canopy", "tutorial-Csharp", "tutorial-pseint", 
     };
     public static Dictionary<string, Paquete> Paquetes {get; private set;} = new Dictionary<string, Paquete>();
 

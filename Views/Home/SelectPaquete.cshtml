@@ -4,36 +4,64 @@
 
 <form action='@Url.Action("GuardarPaquete","Home")'>
     <div class="contenedor">
-    @foreach (string item in ViewBag.destinos)
-    {
-        string var = @item + ".jpg";
-        <h3>@item <img src="~/Fotos/@var" alt="@item"></h3> 
+    @{
+        int contador = 1;
+        @foreach (string item in ViewBag.destinos)
+        {
+            string var = @item + ".jpg";
+            string Contado = contador +". " + @item;
+            <h3>@Contado <img src="~/Fotos/@var" alt="@item"></h3> 
+            contador++;
+        }
     }
     </div>
-    <input type="number" name="Destino" min="1" max="10">
+    <h3>Ingrese el destino deseado   <input type="number" name="Destino" min="1" max="10"></h3> 
+
+
     <div class="contenedor">
     @foreach (string item in ViewBag.hoteles)
     {
+        if (contador == 11)
+        {
+            contador = 1;
+        }
         string var = @item + ".jpg";
-        <img src="~/Fotos/@var" alt="@item" width="200">
+        string Contado = contador +". " + @item;
+            <h3>@Contado <img src="~/Fotos/@var" alt="@item"></h3> 
+            contador++;
     }
     </div>
-    <div class="contenedor">
+    <h3>Ingrese el hotel deseado   <input type="number" name="Hotel" min="1" max="10"></h3>
 
-    </div>
-    <input type="number" name="Hotel" min="1" max="10">
+
+    <div class="contenedor">
     @foreach (string item in ViewBag.aereos)
     {
-        string var = @item + ".jpg";
-        <img src="~/Fotos/@var" alt="@item" width="200">
+        if (contador == 11)
+            {
+            contador = 1;
+            }
+            string var = @item + ".jpg";
+            string Contado = contador +". " + @item;
+            <h3>@Contado <img src="~/Fotos/@var" alt="@item"></h3> 
+            contador++;
     }
-    <input type="number" name="Aereo" min="1" max="10">
+    </div>
+    <h3>Ingrese la aerolinea deseada   <input type="number" name="Aereo" min="1" max="10"></h3>
+
+    <div class="contenedor">
     @foreach (string item in ViewBag.excursiones)
     {
-        string var = @item + ".jpg";
-        <img src="~/Fotos/@var" alt="@item" width="200">
+        if (contador == 11)
+            {
+            contador = 1;
+            }
+            string var = @item + ".jpg";
+            string Contado = contador +". " + @item;
+            <h3>@Contado <img src="~/Fotos/@var" alt="@item"></h3> 
+            contador++;
     }
-    <input type="number" name="Excursion" min="1" max="10">
+    </div>
+    <h3>Ingrese la excursion que desee   <input type="number" name="Excursion" min="1" max="10"></h3>
     <input type="submit">
 </form>
-
