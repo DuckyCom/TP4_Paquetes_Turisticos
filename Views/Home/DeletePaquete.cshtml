@@ -3,23 +3,19 @@
 }
 
  <style>
-    body {
-        background-image: url('/Fotos/FondoDelete.jpg');
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
-    }
+
 </style>
 <form action='@Url.Action("DeletePaquete","Home")'>
-
+        <img src="/Fotos/NoTeOlvidesDelWhere.jpg" alt="NO TE OLVIDES DE PONER EL WHERE">
         @foreach (string item in ViewBag.paquete.Keys)
         {
-            string texto = "Paquete con destino a " + @item;
+            <h3>Paquete con destino a @item </h3> 
             string var = @item + ".jpg";
-            <h3>@texto <img src="~/Fotos/@var" alt="@item"></h3> 
+            <img src="~/Fotos/@var" alt="@item">
+            <br>
             <input type="radio" id="@item" name="destino" value="@item">
-            <label for="@item">@item</label><br>
-
+            <label for="@item">@item</label>
+            <br>
         }
     <input type="submit">
 </form>
