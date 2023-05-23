@@ -27,5 +27,10 @@ public class ORTWorld
         if(retorno) Paquetes.Add(destinoSeleccionado, paquete);
         return retorno;
     }
-   
+   public static void DeletePaquete(string destino){
+        foreach (string item in ORTWorld.Paquetes.Keys)
+        {
+            if (item == destino) ORTWorld.Paquetes.Remove(item);
+        }
+    }
 }

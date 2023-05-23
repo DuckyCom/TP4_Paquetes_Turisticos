@@ -34,5 +34,19 @@ public class HomeController : Controller
         }
         
     }
+
+    public IActionResult DeletePaquete(string destino)
+    {
+        ViewBag.paquete = ORTWorld.Paquetes;
+        if (destino == null)
+        {
+            return View("DeletePaquete");
+        }
+        else
+        {
+            ORTWorld.DeletePaquete(destino);
+            return RedirectToAction("Index");
+        } 
+    }
     //ESTE ES EL UNICO CONTROLLER, CUALQUIER COSA DE CONTROLLER VA ACA Y NO SE CAMBIA
 }

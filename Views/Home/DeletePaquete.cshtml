@@ -1,0 +1,25 @@
+@{
+    ViewData["Title"] = "Paquetes T";
+}
+
+ <style>
+    body {
+        background-image: url('/Fotos/FondoDelete.jpg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+</style>
+<form action='@Url.Action("DeletePaquete","Home")'>
+
+        @foreach (string item in ViewBag.paquete.Keys)
+        {
+            string texto = "Paquete con destino a " + @item;
+            string var = @item + ".jpg";
+            <h3>@texto <img src="~/Fotos/@var" alt="@item"></h3> 
+            <input type="radio" id="@item" name="destino" value="@item">
+            <label for="@item">@item</label><br>
+
+        }
+    <input type="submit">
+</form>
